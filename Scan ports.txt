@@ -1,0 +1,7 @@
+netstat -a
+
+
+kill process occupying port 7777:
+
+netstat -ano | findstr 7777
+taskkill /PID 40004 /f
