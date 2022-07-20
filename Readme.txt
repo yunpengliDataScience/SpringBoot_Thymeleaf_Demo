@@ -9,6 +9,13 @@ http://localhost:7777/SpringBoot_Thymeleaf_Demo/actuator
 Show Prometheus endpoint:
 http://localhost:7777/SpringBoot_Thymeleaf_Demo/actuator/prometheus
 
+Add job to prometheus.yml:
+- job_name: "SpringBoot_Thymeleaf_Demo"
+    scrape_interval: 5s
+    metrics_path: "/SpringBoot_Thymeleaf_Demo/actuator/prometheus"
+    static_configs:
+      - targets: ["localhost:7777"]
+
 Start Prometheus:
 >prometheus --config.file=prometheus.yml
 
