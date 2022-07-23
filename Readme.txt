@@ -36,3 +36,8 @@ https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-pro
 https://www.tutorialworks.com/spring-boot-prometheus-micrometer/
 https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.metrics.export.prometheus
 https://www.baeldung.com/spring-boot-actuators
+
+Add custom metrics to Spring Boot using Micrometer:
+https://fabianlee.org/2022/06/29/java-adding-custom-metrics-to-spring-boot-micrometer-prometheus-endpoint/
+https://mucahit.io/2018/08/27/instrumenting-and-monitoring-spring-boot-2-applications/
+

@@ -12,14 +12,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
+
+
 @Controller
+
 public class UserController {
 
 	private final UserRepository userRepository;
+	private MeterRegistry registry;
 
 	@Autowired
-	public UserController(UserRepository userRepository) {
+	public UserController(UserRepository userRepository, MeterRegistry registry) {
 		this.userRepository = userRepository;
+		this.registry = registry;
 	}
 
 	@GetMapping("/index")
@@ -35,6 +42,10 @@ public class UserController {
 
 	@PostMapping("/adduser")
 	public String addUser(@Valid User user, BindingResult result, Model model) {
+		
+		Counter addUserCounter = Counter.builder("usercontroller.addusercount").description("Add User Count").register(registry);
+		addUserCounter.increment();
+		
 		if (result.hasErrors()) {
 			return "add-user";
 		}
@@ -66,6 +77,9 @@ public class UserController {
 
 	@GetMapping("/delete/{id}")
 	public String deleteUser(@PathVariable("id") long id, Model model) {
+		
+		
+		
 		User user = userRepository.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 		userRepository.delete(user);

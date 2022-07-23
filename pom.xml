@@ -81,7 +81,22 @@
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
-    
+		
+		<!-- Prometheus Instrumentation -->
+		<!-- The client 
+		<dependency>
+		  <groupId>io.prometheus</groupId>
+		  <artifactId>simpleclient</artifactId>
+		  <version>0.16.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.prometheus</groupId>
+			<artifactId>simpleclient_spring_boot</artifactId>
+			<version>0.16.0</version>
+		</dependency>
+    	-->
+    	
+    	
 	</dependencies>
 
 	<build>
