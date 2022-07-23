@@ -43,7 +43,7 @@ public class UserController {
 	@PostMapping("/adduser")
 	public String addUser(@Valid User user, BindingResult result, Model model) {
 		
-		Counter addUserCounter = Counter.builder("usercontroller.addusercount").description("Add User Count").register(registry);
+		Counter addUserCounter = Counter.builder("usercontroller.add.user.count").description("Add User Count").register(registry);
 		addUserCounter.increment();
 		
 		if (result.hasErrors()) {
@@ -78,7 +78,8 @@ public class UserController {
 	@GetMapping("/delete/{id}")
 	public String deleteUser(@PathVariable("id") long id, Model model) {
 		
-		
+		Counter deleteUserCounter = Counter.builder("usercontroller.delete.user.count").description("Delete User Count").register(registry);
+		deleteUserCounter.increment();
 		
 		User user = userRepository.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
