@@ -21,6 +21,12 @@ Start Prometheus:
 
 Access Prometheus console:
 http://localhost:9090
+
+Start Grafana:
+>grafana-server
+
+Access Grafana console:
+http://localhost:3000
 -----------------------------------------------------------------------------------------
 Hal Explorer:
 https://toedter.github.io/hal-explorer/snapshot/reference-doc/
