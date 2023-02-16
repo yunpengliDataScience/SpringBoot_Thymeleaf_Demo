@@ -1,10 +1,16 @@
 package org.dragon.yunpeng.thymeleaf.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
+
+import org.dragon.yunpeng.thymeleaf.pojos.AccessDictionary;
+import org.dragon.yunpeng.thymeleaf.pojos.LabelIdPair;
 
 @Entity
 public class User {
@@ -17,6 +23,12 @@ public class User {
 
 	@NotBlank(message = "Email is mandatory")
 	private String email;
+
+	@Transient
+	private List<AccessDictionary> accessDictionaryList;
+
+	@Transient
+	private List<LabelIdPair> labelIdPairList;
 
 	public User() {
 	}
@@ -48,6 +60,22 @@ public class User {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public List<AccessDictionary> getAccessDictionaryList() {
+		return accessDictionaryList;
+	}
+
+	public void setAccessDictionaryList(List<AccessDictionary> accessDictionaryList) {
+		this.accessDictionaryList = accessDictionaryList;
+	}
+
+	public List<LabelIdPair> getLabelIdPairList() {
+		return labelIdPairList;
+	}
+
+	public void setLabelIdPairList(List<LabelIdPair> labelIdPairList) {
+		this.labelIdPairList = labelIdPairList;
 	}
 
 	@Override
