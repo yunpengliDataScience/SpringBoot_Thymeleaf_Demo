@@ -2,6 +2,7 @@ package org.dragon.yunpeng.thymeleaf.pojos;
 
 public class LabelIdPair {
 
+	private String categoryName;
 	private String label;
 	private Integer id;
 
@@ -13,9 +14,15 @@ public class LabelIdPair {
 		this.id = id;
 	}
 
+	public LabelIdPair(String categoryName, String label, Integer id) {
+		this.categoryName = categoryName;
+		this.label = label;
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return "(label=" + label + ", id=" + id + ")";
+		return "(categoryName=" + categoryName + ", label=" + label + ", id=" + id + ")";
 	}
 
 	public String getLabel() {
@@ -32,6 +39,14 @@ public class LabelIdPair {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 }

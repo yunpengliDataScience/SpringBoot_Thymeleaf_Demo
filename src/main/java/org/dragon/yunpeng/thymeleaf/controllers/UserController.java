@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import javax.validation.Valid;
 
 import org.dragon.yunpeng.thymeleaf.entities.User;
+import org.dragon.yunpeng.thymeleaf.pojos.AccessCategory;
 import org.dragon.yunpeng.thymeleaf.pojos.AccessDictionary;
 import org.dragon.yunpeng.thymeleaf.pojos.LabelIdPair;
 import org.dragon.yunpeng.thymeleaf.repositories.UserRepository;
@@ -65,6 +66,15 @@ public class UserController {
 		}
 
 		user.setLabelIdPairList(labelIdPairList);
+
+		List<AccessCategory> accessCategoryList = new ArrayList<AccessCategory>();
+
+		for (int i = 0; i < 5; i++) {
+			AccessCategory accessCategory = new AccessCategory(i, "Category" + i);
+			accessCategoryList.add(accessCategory);
+		}
+
+		user.setAccessCategoryList(accessCategoryList);
 	}
 
 	@PostMapping("/adduser")
@@ -75,11 +85,15 @@ public class UserController {
 		addUserCounter.increment();
 
 		if (result.hasErrors()) {
+			setupUser(user);  //TODO
 			return "add-user";
 		}
 
 		List<LabelIdPair> labelIdPairList = user.getLabelIdPairList();
 		System.out.println("labelIdPairList==>" + labelIdPairList);
+		
+		List<AccessCategory> accessCategoryList = user.getAccessCategoryList();
+		System.out.println("accessCategoryList==>" + accessCategoryList);
 
 		userRepository.save(user);
 

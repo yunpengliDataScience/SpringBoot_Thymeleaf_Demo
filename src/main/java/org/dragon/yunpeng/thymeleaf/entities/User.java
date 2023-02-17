@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 
+import org.dragon.yunpeng.thymeleaf.pojos.AccessCategory;
 import org.dragon.yunpeng.thymeleaf.pojos.AccessDictionary;
 import org.dragon.yunpeng.thymeleaf.pojos.LabelIdPair;
 
@@ -29,6 +30,9 @@ public class User {
 
 	@Transient
 	private List<LabelIdPair> labelIdPairList;
+
+	@Transient
+	private List<AccessCategory> accessCategoryList;
 
 	public User() {
 	}
@@ -76,6 +80,14 @@ public class User {
 
 	public void setLabelIdPairList(List<LabelIdPair> labelIdPairList) {
 		this.labelIdPairList = labelIdPairList;
+	}
+
+	public List<AccessCategory> getAccessCategoryList() {
+		return accessCategoryList;
+	}
+
+	public void setAccessCategoryList(List<AccessCategory> accessCategoryList) {
+		this.accessCategoryList = accessCategoryList;
 	}
 
 	@Override

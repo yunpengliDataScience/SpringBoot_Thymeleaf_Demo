@@ -10,35 +10,7 @@
         
         <link rel="stylesheet" th:href="@{css/style.css}">
         
-        <script type="text/javascript">
         
-        window.onload = function(){
-			showAndHide(0);  //make an initial index selection
-		}
-        
-        //It only displays the assoicated category section when a selection on the category is made.
-        //The page initially lists all the category sections.  By using this trick, it creates a dynamic update visual effect.
-        //In addition, hiden form elements (style.display:none) can still preserve values after form submission. 
-        function showAndHide(selectedIndex){
-			//alert(selectedIndex);
-			
-			var selectedCategoryId = this.categorySelection.options[selectedIndex].value;
-			
-			//alert(selectedCategoryId);
-			
-			var elements = document.getElementsByClassName("categoryClass");
-			
-			for(var i = 0; i<elements.length; i++){
-				var element = elements[i];
-				
-				if(selectedCategoryId == element.id){
-					element.style.display = '';
-				} else{
-					element.style.display = 'none';
-				}
-			}
-		}
-        </script>
     </head>
     <body>
         <div class="container my-5">
@@ -87,13 +59,9 @@
                         
                         <div class="row">
                         	<fieldset>
-                        		<legend>Access Category and Rights Selection</legend>
+                        		<legend>Access Category and Rights</legend>
                         		
-                        		<select id="categorySelection" class="form-control" th:onChange="showAndHide(this.selectedIndex);">
-                        			<option th:each="categoryOpt: ${user.accessCategoryList}" th:value="${categoryOpt.categoryId}" th:text="${categoryOpt.categoryName}" />
-                        		</select>
-                        		
-                        		<div th:each="category, itemStat1: ${user.accessCategoryList}" th:id="${category.categoryId}" class="categoryClass">
+                        		<div th:each="category, itemStat1: ${user.accessCategoryList}">
                         			[[${category.categoryName}]]: 
 	                        		
 	                        		<!-- Thymeleaf: bind a field of an item in a collection with the form field -->
