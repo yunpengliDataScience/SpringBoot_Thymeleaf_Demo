@@ -5,15 +5,20 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Add User</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
         
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.1/css/bootstrap.min.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/5.15.4/css/all.css}" />
+
         <link rel="stylesheet" th:href="@{css/style.css}">
         
+        <!-- Order is important: jquery, popper, bootstrap -->
+		<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.0/umd/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.1/js/bootstrap.min.js}"></script>
         <script type="text/javascript">
         
         window.onload = function(){
-			showAndHide(0);  //make an initial index selection
+			showAndHide2(0);  //make an initial index selection
 		}
         
         //It only displays the assoicated category section when a selection on the category is made.
@@ -38,6 +43,24 @@
 				}
 			}
 		}
+		
+		//Jquery
+		function showAndHide2(selectedIndex){
+			//alert(selectedIndex);
+			
+			var selectedCategoryId = this.categorySelection.options[selectedIndex].value;
+			
+			//alert(selectedCategoryId);
+			
+			//var elements = $('.categoryClass[id*="'+selectedCategoryId+'"]');
+			
+			//console.log(elements);
+			//alert(elements.attr('id'));
+			
+			$('.categoryClass[id*="'+selectedCategoryId+'"]').css('display', '');
+			$('.categoryClass[id!="'+selectedCategoryId+'"]').css('display', 'none');
+		}
+		
         </script>
     </head>
     <body>
@@ -89,7 +112,7 @@
                         	<fieldset>
                         		<legend>Access Category and Rights Selection</legend>
                         		
-                        		<select id="categorySelection" class="form-control" th:onChange="showAndHide(this.selectedIndex);">
+                        		<select id="categorySelection" class="form-control" th:onChange="showAndHide2(this.selectedIndex);">
                         			<option th:each="categoryOpt: ${user.accessCategoryList}" th:value="${categoryOpt.categoryId}" th:text="${categoryOpt.categoryName}" />
                         		</select>
                         		
