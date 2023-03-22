@@ -47,3 +47,8 @@ Add custom metrics to Spring Boot using Micrometer:
 https://fabianlee.org/2022/06/29/java-adding-custom-metrics-to-spring-boot-micrometer-prometheus-endpoint/
 https://mucahit.io/2018/08/27/instrumenting-and-monitoring-spring-boot-2-applications/
 
+-----------------------------------------------------------------------
+Spring Boot Logging:
+https://www.baeldung.com/spring-boot-logging
+
+

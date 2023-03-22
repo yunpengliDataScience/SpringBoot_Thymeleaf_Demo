@@ -11,6 +11,8 @@ import org.dragon.yunpeng.thymeleaf.pojos.AccessCategory;
 import org.dragon.yunpeng.thymeleaf.pojos.AccessDictionary;
 import org.dragon.yunpeng.thymeleaf.pojos.LabelIdPair;
 import org.dragon.yunpeng.thymeleaf.repositories.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +29,8 @@ import io.micrometer.core.instrument.MeterRegistry;
 
 public class UserController {
 
+	Logger logger = LoggerFactory.getLogger(UserController.class);
+	
 	private final UserRepository userRepository;
 	private MeterRegistry registry;
 
@@ -90,10 +94,10 @@ public class UserController {
 		}
 
 		List<LabelIdPair> labelIdPairList = user.getLabelIdPairList();
-		System.out.println("labelIdPairList==>" + labelIdPairList);
+		logger.info("labelIdPairList==>" + labelIdPairList);
 		
 		List<AccessCategory> accessCategoryList = user.getAccessCategoryList();
-		System.out.println("accessCategoryList==>" + accessCategoryList);
+		logger.info("accessCategoryList==>" + accessCategoryList);
 
 		userRepository.save(user);
 
