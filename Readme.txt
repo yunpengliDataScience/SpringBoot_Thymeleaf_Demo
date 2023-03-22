@@ -51,4 +51,7 @@ https://mucahit.io/2018/08/27/instrumenting-and-monitoring-spring-boot-2-applica
 Spring Boot Logging:
 https://www.baeldung.com/spring-boot-logging
 
+Spring AOP Pointcut:
+https://www.baeldung.com/spring-aop-pointcut-tutorial
+
 

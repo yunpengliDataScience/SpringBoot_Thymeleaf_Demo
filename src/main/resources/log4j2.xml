@@ -33,8 +33,8 @@
             <AppenderRef ref="RollingFile" />
         </Root>
 
-        <!-- LOG "org.dragon.yunpeng*" at TRACE level -->
-        <Logger name="org.dragon.yunpeng" level="trace"></Logger>
+        <!-- LOG "org.dragon.yunpeng.thymeleaf*" at TRACE level -->
+        <Logger name="org.dragon.yunpeng.thymeleaf" level="trace"></Logger>
     </Loggers>
 
 </Configuration>
