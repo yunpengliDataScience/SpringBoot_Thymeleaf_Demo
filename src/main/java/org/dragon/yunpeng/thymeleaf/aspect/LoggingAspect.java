@@ -21,7 +21,8 @@ public class LoggingAspect {
 	}
 
 	// Set up a Pointcut for CrudRepository save related methods
-	@Pointcut("execution( * org.springframework.data.repository.CrudRepository.save*(..))")
+	@Pointcut("execution( * org.springframework.data.repository.CrudRepository.save*(..)) || "
+			+ "execution( * org.springframework.data.repository.CrudRepository.delete*(..))")
 	public void repositoryClassMethods() {
 	}
 
@@ -37,6 +38,9 @@ public class LoggingAspect {
 		}
 
 		Object returnedObj = pjp.proceed();
-		logger.info("Returned Object: " + returnedObj.toString());
+
+		if (returnedObj != null) {
+			logger.info("Returned Object: " + returnedObj.toString());
+		}
 	}
 }
