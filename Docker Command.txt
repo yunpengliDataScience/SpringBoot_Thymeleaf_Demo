@@ -1,0 +1,20 @@
+# Build image
+docker build -t springboot_thymeleaf_demo .
+
+# List images
+docker images 
+
+# Run container from the image in attached mode
+docker container run -p 7070:7777 springboot_thymeleaf_demo 
+
+# Run container from the image in detached mode
+docker container run -d -p 7070:7777 springboot_thymeleaf_demo
+
+# List containers
+docker container ps
+
+# Remove container
+docker container rm xxxx
+
+# Remove image
+docker image rm springboot_thymeleaf_demo 
