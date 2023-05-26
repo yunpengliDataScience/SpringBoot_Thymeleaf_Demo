@@ -54,4 +54,9 @@ https://www.baeldung.com/spring-boot-logging
 Spring AOP Pointcut:
 https://www.baeldung.com/spring-aop-pointcut-tutorial
 
+-----------------------------------------------------------------------
+Jacoco Code Coverage:
+
+https://www.baeldung.com/jacoco
+https://www.jacoco.org/jacoco/trunk/index.html
 
