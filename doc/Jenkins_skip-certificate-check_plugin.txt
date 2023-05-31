@@ -1,0 +1,14 @@
+Use "skip-certificate-check" Jenkins plugin to walk around PKIX valid cert error:
+
+Since the PKIX valid cert error prevents Jenkins from downloading Jenkins plugins through its GUI interface, it is also impossible to download "skip-certificate-check" plugin through the GUI either.
+To break such dead-lock, the "skip-certificate-check" plugin needs to be downloaded and installed manually:
+1. Visit https://plugins.jenkins.io/skip-certificate-check/releases/ to download skip-certificate-check.hpi through a direct download link.
+2. Save skip-certificate-check.hpi into the jenkins plugins directory (e.g. C:\ProgramData\Jenkins\.jenkins\plugins).
+3. Change the extenstion .hpi to be .jpi (skip-certificate-check.jpi).
+4. Restart Jenkins service.
+
+Then Jenkins should be able to dowload plugins without PKIX valid cert errors.
+
+References:
+https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/SunCertPathBuilderException-fix-for-Jenkins-plugin-download
+https://www.jenkins.io/doc/book/managing/plugins/#advanced-installation
