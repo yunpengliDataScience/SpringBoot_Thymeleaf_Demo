@@ -1,0 +1,19 @@
+<launch4jConfig>
+    <dontWrapJar>false</dontWrapJar>
+    <headerType>console</headerType>
+    <jar>C:/Projects/SpringBoot_Thymeleaf_Demo/target/SpringBoot_Thymeleaf_Demo.jar</jar>
+    <outfile>C:/Projects/SpringBoot_Thymeleaf_Demo/target/SpringBoot_Thymeleaf_Demo.exe</outfile>
+    <errTitle>Your Application Error</errTitle>
+    <cmdLine></cmdLine>
+    <chdir>./</chdir>
+    <priority>normal</priority>
+    <downloadUrl>http://java.com/download</downloadUrl>
+    <supportUrl>http://your-website.com</supportUrl>
+    <stayAlive>false</stayAlive>
+    <manifest></manifest>
+    <icon>C:/Projects/SpringBoot_Thymeleaf_Demo/green_dragon_icon.ico</icon>
+    <jre>
+        <minVersion>1.8.0</minVersion>
+        <jdkPreference>preferJre</jdkPreference>
+    </jre>
+</launch4jConfig>

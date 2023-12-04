@@ -1,0 +1,43 @@
+To create an executable .exe file that can launch the Spring Boot application:
+
+1. Add plugin in pom.xml:
+
+	<plugin>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-maven-plugin</artifactId>
+	</plugin>
+	
+2. Package up the application into a jar file:
+
+	mvn clean package -DskipTests
+	
+3. Use launch4j to create the executable file: 
+	
+	launch4j C:\Projects\SpringBoot_Thymeleaf_Demo\launch4j.xml
+	
+---------------------------------------------------------------------
+launch4j.xml:
+
+<launch4jConfig>
+    <dontWrapJar>false</dontWrapJar>
+    <headerType>console</headerType>
+    <jar>C:/Projects/SpringBoot_Thymeleaf_Demo/target/SpringBoot_Thymeleaf_Demo.jar</jar>
+    <outfile>C:/Projects/SpringBoot_Thymeleaf_Demo/target/SpringBoot_Thymeleaf_Demo.exe</outfile>
+    <errTitle>Your Application Error</errTitle>
+    <cmdLine></cmdLine>
+    <chdir>./</chdir>
+    <priority>normal</priority>
+    <downloadUrl>http://java.com/download</downloadUrl>
+    <supportUrl>http://your-website.com</supportUrl>
+    <stayAlive>false</stayAlive>
+    <manifest></manifest>
+    <icon></icon>
+    <jre>
+        <minVersion>1.8.0</minVersion>
+        <jdkPreference>preferJre</jdkPreference>
+    </jre>
+</launch4jConfig>
+
+
+Launch4j:
+https://launch4j.sourceforge.net/
