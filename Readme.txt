@@ -60,3 +60,7 @@ Jacoco Code Coverage:
 https://www.baeldung.com/jacoco
 https://www.jacoco.org/jacoco/trunk/index.html
 
+-----------------------------------------------------------------------
+Use DBeaver to explore database:
+
+https://dbeaver.io/
