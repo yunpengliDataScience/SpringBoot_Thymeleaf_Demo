@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 
@@ -14,6 +15,7 @@ import org.dragon.yunpeng.thymeleaf.pojos.AccessDictionary;
 import org.dragon.yunpeng.thymeleaf.pojos.LabelIdPair;
 
 @Entity
+@Table(name = "DEMO_USER")
 public class User {
 
 	@Id
