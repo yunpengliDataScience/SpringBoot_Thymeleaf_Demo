@@ -173,6 +173,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>SpringBoot_Thymeleaf_Demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -199,6 +200,28 @@
 			    </executions>
 			</plugin>
 			
+			<!--
+			 <plugin>
+	            <groupId>com.akathist.maven.plugins.launch4j</groupId>
+	            <artifactId>launch4j-maven-plugin</artifactId>
+	            <version>2.4.1</version>
+	            <executions>
+	                <execution>
+	                    <id>l4j-cli</id>
+	                    <phase>package</phase>
+	                    <goals>
+	                        <goal>launch4j</goal>
+	                    </goals>
+	                    <configuration>
+	                        <headerType>gui</headerType>
+	                        <outfile>${project.build.directory}/SpringBoot_Thymeleaf_Demo.exe</outfile>
+	                        <jar>${project.build.directory}/SpringBoot_Thymeleaf_Demo.jar</jar>
+	                        
+	                    </configuration>
+	                </execution>
+	            </executions>
+	        </plugin>
+			-->
 		</plugins>
 	</build>
 
