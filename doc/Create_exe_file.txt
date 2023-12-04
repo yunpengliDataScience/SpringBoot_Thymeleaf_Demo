@@ -11,8 +11,9 @@ To create an executable .exe file that can launch the Spring Boot application:
 
 	mvn clean package -DskipTests
 	
+
 3. Use launch4j to create the executable file (.exe): 
-	
+
 	launch4j C:\Projects\SpringBoot_Thymeleaf_Demo\launch4j.xml
 	
 ---------------------------------------------------------------------
